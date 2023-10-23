@@ -1,38 +1,236 @@
+/* App.css */
 .App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  position: relative;
+  overflow-x: hidden; /* Legg til dette for å hindre horisontal rulling */
+  min-height: 100vh; /* Minimum full høyde av visningen */
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  flex-grow: 1; /* Fyll opp all tilgjengelig vertikal plass */
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: left; /* Plasser tittelen til venstre */
+  margin-left: 20px; /* Legg til litt avstand fra venstre kant */
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between; /* Plasser elementene til venstre og høyre */
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar-title {
+  margin: 0;
+}
+
+/* Menu toggle styling */
+.menu-toggle {
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+.bar.close {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+/* Menu styling */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  transition: right 0.3s;
+  z-index: 1;
+  padding-top: 60px;
+}
+
+.menu.open {
+  right: 0;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.close-menu-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu ul li {
+  margin: 20px;
+}
+
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* BookingGrid styling */
+.BookingGrid {
+  margin: 20px auto;
+  max-width: 600px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  padding: 8px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* BookingForm styling */
+.BookingForm.open {
+  max-height: 600px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
   color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+button[type="submit"]:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Reserveringsknapp styling */
+.reservation-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 20px;
+}
+
+.reservation-button:hover {
+  background-color: #0056b3;
+}
+
+/* Legg til en strek under lenken i menyen ved hover */
+.menu-link {
+  color: white;
+  display: block;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative; /* Legg til relativ posisjon for å plassere streken */
+}
+
+.menu-link:hover {
+  color: #007bff;
+  transition: color 0.3s ease-in-out;
+  /* Legg til en strek under lenken ved hover */
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff;
+    position: absolute;
+    bottom: -2px; /* Plasser streken under teksten */
+    left: 0;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+/* Footer styling */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between; /* Plasser elementer til venstre og høyre */
+  align-items: center; /* Sentrerer elementer vertikalt */
+}
+
+.footer-info {
+  display: flex;
+  align-items: center; /* Sentrerer elementer vertikalt i footer-info */
+}
+
+.footer-logo {
+  margin-right: 10px;
+}
+
+.footer-text {
+  font-size: 14px;
+}
+
+/* Legg til en hover-effekt på lenkene i footer */
+.footer a:hover {
+  color: #007bff;
+  text-decoration: underline;
 }
