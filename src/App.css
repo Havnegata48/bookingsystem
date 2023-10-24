@@ -53,15 +53,17 @@ h1 {
 
 /* Menu styling */
 .menu {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: -250px;
   width: 250px;
-  height: 88%;
+  height: 15%;
   background-color: #14222bc0;
   transition: right 0.3s;
   z-index: 1;
   padding-top: 60px;
+  border-bottom-left-radius: 20px;
+
 }
 
 .menu.open {
@@ -211,14 +213,17 @@ button[type="submit"]:hover {
   background-color: #14222b;
   color: white;
   padding: 20px;
-  display: flex;
+  display: block;
   justify-content: right; /* Plasser elementer til venstre og høyre */
   align-items: center; /* Sentrerer elementer vertikalt */
+
+  
 }
 
 .footer-info {
   display: flex;
   align-items: center; /* Sentrerer elementer vertikalt i footer-info */
+  float: right;
 }
 
 .footer-logo {
@@ -235,4 +240,23 @@ button[type="submit"]:hover {
 .footer a:hover {
   color: #007bff;
   text-decoration: underline;
+}
+/* BookingSchedule styling */
+.BookingSchedule {
+  margin: 20px auto;
+  max-width: 800px; /* Juster bredden etter behov */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 70%;;
+}
+
+/* Juster utseendet på BookingSchedule etter behov */
+.Scheduler {
+  /* Legg til stil for Scheduler-komponenten her */
+}
+
+.EventItem {
+  /* Legg til stil for EventItem-komponenten her */
 }

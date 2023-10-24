@@ -1,13 +1,12 @@
+// App.js
 import React, { useState } from 'react';
-import BookingGrid from './BookingGrid';
-import BookingForm from './BookingForm';
+import BookingSchedule from './BookingSchedule'; // Importer BookingSchedule
 import './App.css';
 import fellesLogo from './logos/felleslogo.png';
 import { FaGithub, FaBuilding } from 'react-icons/fa';
 
 function App() {
   const [bookings, setBookings] = useState([]);
-  const [showForm, setShowForm] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -16,11 +15,6 @@ function App() {
 
   const closeMenu = () => {
     setShowMenu(false);
-  };
-
-  const addBooking = (booking) => {
-    setBookings([...bookings, booking]);
-    setShowForm(false);
   };
 
   return (
@@ -45,9 +39,17 @@ function App() {
             <li><a href="https://github.com/Havnegata48" className="menu-link"><FaGithub /> GitHub</a></li>
           </ul>
         </div>
-        <BookingGrid bookings={bookings} />
-        <button className="reservation-button" onClick={() => setShowForm(!showForm)}>Reserver rommet</button>
-        {showForm && <BookingForm addBooking={addBooking} />}
+        <br /> 
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <BookingSchedule bookings={bookings} /> {/* Inkluder BookingSchedule */}
       </div>
       <footer className="footer">
       <div className="footer-info">
