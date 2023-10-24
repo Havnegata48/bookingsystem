@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import BookingGrid from './BookingGrid';
 import BookingForm from './BookingForm';
 import './App.css';
-import brregLogo from './logos/brreg.png';
-import digdirLogo from './logos/digdir.png';
+import fellesLogo from './logos/felleslogo.png';
+import { FaGithub, FaBuilding } from 'react-icons/fa';
 
 function App() {
   const [bookings, setBookings] = useState([]);
@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <div className="navbar">
-        <h1 className="navbar-title">Booking for rom H48</h1>
+        <h1 className="navbar-title">Bookingside for H48</h1>
         <div className={`menu-toggle ${showMenu ? 'close' : ''}`} onClick={toggleMenu}>
           <div className="bar"></div>
           <div className="bar"></div>
@@ -41,7 +41,8 @@ function App() {
             </button>
           </div>
           <ul>
-            <li><a href="https://havnegata48.no/" className="menu-link">Gå hjem til Havnegata 48</a></li>
+            <li><a href="https://havnegata48.no/" className="menu-link"><FaBuilding /> Havnegata 48</a></li>
+            <li><a href="https://github.com/Havnegata48" className="menu-link"><FaGithub /> GitHub</a></li>
           </ul>
         </div>
         <BookingGrid bookings={bookings} />
@@ -49,26 +50,17 @@ function App() {
         {showForm && <BookingForm addBooking={addBooking} />}
       </div>
       <footer className="footer">
-        <div className="footer-info">
-          <div className="footer-logo">
-            <img src={brregLogo} width="300px" alt="Brønnøysundregistrene" />
-          </div>
-          <div className="footer-text">
-            Organisasjonsnummer: 974 760 673
-            <br />
-            <a href="https://www.brreg.no">www.brreg.no</a>
-          </div>
-        </div>
-        <div className="footer-info">
+      <div className="footer-info">
         <div className="footer-text">
-            Organisasjonsnummer: 991 825 827
+            Utviklet for
             <br />
-            <a href="https://www.digdir.no">www.digdir.no</a>
+            Digitaliseringsdirektoratet og
+            <br />
+            Brønnøysundregistrene
           </div>
           <div className="footer-logo">
-            <img src={digdirLogo} width="150px" alt="Digitaliseringsdirektoratet" />
+            <img src={fellesLogo} width="150px" alt="Brreg x DigDir" />
           </div>
-
         </div>
       </footer>
     </div>
