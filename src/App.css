@@ -7,11 +7,13 @@
   min-height: 100vh; /* Minimum full høyde av visningen */
   display: flex;
   flex-direction: column;
+  display: flex;
 }
 
 .body {
   flex-grow: 1; /* Fyll opp all tilgjengelig vertikal plass */
   padding: 20px;
+  flex: 1 0 auto; /* This will make sure that the .body takes up the available space */
 }
 
 h1 {
@@ -28,6 +30,7 @@ h1 {
   justify-content: space-between; /* Plasser elementene til venstre og høyre */
   align-items: center;
   padding: 10px 20px;
+  z-index: 1000;
 }
 
 .navbar-title {
@@ -55,16 +58,21 @@ h1 {
 .menu {
   position: absolute;
   top: 0;
-  right: -250px;
-  width: 250px;
-  height: 15%;
+  right: 0;             /* Adjust this */
+  width: 300px;          /* Adjust this */
+  height: 100%;
   background-color: #14222bc0;
-  transition: right 0.3s;
-  z-index: 1;
+  transition: transform 0.3s;  /* Adjust this to use transform */
+  z-index: 999;
   padding-top: 60px;
   border-bottom-left-radius: 20px;
-
+  transform: translateX(100%);  /* Adjust this */
 }
+
+.menu.open {
+  transform: translateX(0);   /* Adjust this */
+}
+
 
 .menu.open {
   right: 0;
@@ -72,7 +80,7 @@ h1 {
 
 .menu-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;   /* Change this from space-between to flex-end */
   align-items: center;
   padding: 0 20px;
 }
@@ -83,6 +91,7 @@ h1 {
   font-size: 24px;
   color: white;
   cursor: pointer;
+  margin-left: auto;  /* Add this to push the button to the right */
 }
 
 .menu ul {
@@ -216,6 +225,12 @@ button[type="submit"]:hover {
   display: block;
   justify-content: right; /* Plasser elementer til venstre og høyre */
   align-items: center; /* Sentrerer elementer vertikalt */
+  flex-shrink: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; 
 
   
 }
@@ -227,7 +242,7 @@ button[type="submit"]:hover {
 }
 
 .footer-logo {
-  margin-right: 10px;
+  margin-right: 50px;
 }
 
 .footer-text {
@@ -254,9 +269,14 @@ button[type="submit"]:hover {
 
 /* Juster utseendet på BookingSchedule etter behov */
 .Scheduler {
-  /* Legg til stil for Scheduler-komponenten her */
+  z-index: 3;
 }
 
 .EventItem {
   /* Legg til stil for EventItem-komponenten her */
+}
+.scheduler-container {
+  width: 100%;
+  height: 80vh; /* 80% of the viewport height */
+  overflow: hidden;
 }

@@ -1,12 +1,11 @@
 // App.js
 import React, { useState } from 'react';
-import BookingSchedule from './BookingSchedule'; // Importer BookingSchedule
+import Scheduler from './Scheduler'; // Importer BookingSchedule
 import './App.css';
 import fellesLogo from './logos/felleslogo.png';
 import { FaGithub, FaBuilding } from 'react-icons/fa';
 
 function App() {
-  const [bookings, setBookings] = useState([]);
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -39,17 +38,9 @@ function App() {
             <li><a href="https://github.com/Havnegata48" className="menu-link"><FaGithub /> GitHub</a></li>
           </ul>
         </div>
-        <br /> 
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <BookingSchedule bookings={bookings} /> {/* Inkluder BookingSchedule */}
+        <div className="Scheduler">
+    <Scheduler />
+        </div>
       </div>
       <footer className="footer">
       <div className="footer-info">
