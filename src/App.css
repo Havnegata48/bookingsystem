@@ -60,7 +60,7 @@ h1 {
   top: 0;
   right: 0;             /* Adjust this */
   width: 300px;          /* Adjust this */
-  height: 100%;
+  height: 90%;
   background-color: #14222bc0;
   transition: transform 0.3s;  /* Adjust this to use transform */
   z-index: 999;

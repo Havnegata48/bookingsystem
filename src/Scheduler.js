@@ -12,8 +12,6 @@ function Scheduler() {
         scheduler.i18n.setLocale("nb");
         scheduler.init("scheduler_here", new Date(),"week", {theme: ""});
 
-        scheduler.config.first_hour = 6;
-        scheduler.config.last_hour = 17;
         // Attach events to save data when any changes are made
         scheduler.attachEvent("onEventAdded", saveData);
         scheduler.attachEvent("onEventChanged", saveData);
